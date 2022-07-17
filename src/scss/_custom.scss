@@ -1,0 +1,261 @@
+.zoom:hover {
+    transform: scale(1.2);
+}
+
+@media (hover: none) {
+    .zoom:hover {
+        transform: none;
+    }
+}
+
+
+pre code {
+    /* font-size: inherit; */
+    font-size: 0.7rem;
+   
+}
+
+.hljs-string{
+    color: #decc0d  !important;
+}
+
+.hljs-variable {
+    color: #decc0d  !important;
+}
+
+
+.hljs {
+    display: block;
+    /* overflow-x: auto; */
+    padding: .5em;
+    background: #22212c !important;
+    color: #ff725e;
+    height: 300px;
+    //height: 340px;
+}
+/*
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 25px;
+
+     your custom style here
+}
+ */
+/* for block of code */
+.hljs-ln-code {
+    padding-left: 10px;
+    
+}
+
+/*
+#nav-tab-terminal {
+    background: #232323;
+}
+*/
+
+.nav-link.active,
+.show > .nav-link {
+    color:#eff1f5 !important;
+    background-color: $nav-pills-link-active-custom !important;
+    border-color:$nav-pills-link-active-color;
+}
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgb(20, 19, 19);
+    color: rgb(175, 17, 17);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+   // transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(12, 11, 11) transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+   // opacity: 1;
+  }
+
+
+#button_codeCardSnippet:hover ,
+#button_codeLetterSnippet:hover ,
+#button_codeResumeSnippet:hover ,
+#button_codeResume2Snippet:hover ,
+#button_codeReportSnippet:hover ,
+#button_codeInvoiceSnippet:hover  {
+    color: #555;
+}
+
+
+#button_bash:hover, 
+#button_java:hover , 
+#button_python:hover, 
+#button_js:hover, 
+#button_info:hover, 
+#button_info_py_js:hover
+{
+    color: #555;
+}
+
+#try_now:hover{
+    color: rgb(165, 22, 22);
+}
+
+
+#button_bash {
+    position: absolute;
+    top:1em;
+    right:2em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+#button_info {
+    position: absolute;
+    top:1em;
+    right:1em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+#button_info_py_js {
+    position: absolute;
+    top:1em;
+    right:2em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+#button_java {
+    position: absolute;
+    top:1em;
+    right:2em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+#nav-profile, 
+#nav-home, 
+#nav-pdfInvoice, 
+#nav-pdfResume, 
+#nav-pdfResume_2, 
+#nav-pdfResume_2_mobile, 
+#nav-pdfReport, 
+#nav-pdfLetter, 
+#nav-codeLetter,
+#nav-pdfCard , 
+#nav-codeCard, 
+#nav-codeCardSnippet,
+#nav-codeLetterSnippet,
+#nav-codeResumeSnippet,
+#nav-codeResumeSnippet_mobile,
+#nav-codeResume2Snippet,
+#nav-codeReportSnippet,
+#nav-codeInvoiceSnippet, 
+#nav-contact, 
+#nav-js{
+    position: relative;
+}
+
+
+#button_python {
+    position: absolute;
+    top:1em;
+    right:3em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+
+#button_js {
+    position: absolute;
+    top:1em;
+    right:3em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+
+#button_more {
+    cursor: pointer;
+}
+
+
+
+#button_codeCardSnippet, #button_codeInvoiceSnippet, #button_codeResumeSnippet, #button_codeResume2Snippet, #button_codeReportSnippet, #button_codeLetterSnippet {
+    position: absolute;
+    top:1em;
+    right:2em;
+    color: #e6e1dc;
+    cursor: pointer;
+}
+
+#terminalcodeCardSnippet ,
+#terminalcodeLetterSnippet ,
+#terminalcodeResumeSnippet ,
+#terminalcodeResume2Snippet ,
+#terminalcodeResume2Snippet_mobile,
+#terminalcodeInvoiceSnippet,
+#terminalcodeReportSnippet  {
+    height: 500px;
+}
+
+/*Notification alerts*/
+#notification-box {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 999999;
+}
+#notification-box p {
+	background-color: rgba(0,0,0,.7);
+	width: 100px;
+	border-radius: 5px;
+	padding: .7em;
+	margin: .5em;
+	color: white;
+	font-size: 1em;
+    text-align: center;
+}
+
+
+
+#pricing .list-group-item {
+    padding-right: 0.6rem; 
+    padding-left: 0.6rem; 
+
+}
