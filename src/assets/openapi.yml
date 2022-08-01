@@ -1,0 +1,413 @@
+openapi: 3.0.0
+info:
+  title: yakpdf
+  x-logo:
+    url: "https://yakpdf.com/assets/img/logo-black.png"
+    backgroundColor: "#FFFFFF"
+    altText: "yakpdf logo"
+  version: '1.0'
+  description: |-
+    ## A practical HTML to PDF API
+
+    Whether you need invoices for your e-commerce or
+    advanced reports for your moonshot startup, don't get distracted!
+    Leave the PDF generation to us and keep focus on your core business.
+
+    **[Get Started!](https://rapidapi.com/yakpdf-yakpdf/api/yakpdf)**
+  contact:
+    email: info@yakpdf.com
+    url: https://yakpdf.com/
+servers:
+  - url: 'https://yakpdf.p.rapidapi.com/pdf'
+paths:
+  /pdf:
+    post:
+      summary: Generate a PDF
+      operationId: post-pdf
+      description: Generate a PDF from a URL or HTML string.
+      requestBody:
+        content:
+          application/json:
+            examples:
+              Hello World!:
+                value:
+                  source:
+                    html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body><h1>Hello World!</h1></body></html>'
+                  pdf:
+                    format: A4
+                    scale: 1
+                    printBackground: true
+                  wait:
+                    for: navigation
+                    waitUntil: load
+                    timeout: 250
+            schema:
+              $ref: '#/components/schemas/Options'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf:
+              schema: {}
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+    parameters: []
+components:
+  schemas:
+    PdfOptions:
+      title: PdfOptions
+      type: object
+      x-examples:
+        example:
+          format: A4
+          scale: 1
+          printBackground: true
+          landscape: true
+          pageRanges: string
+          width: string
+          height: string
+          margin:
+            top: string
+            right: string
+            bottom: string
+            left: string
+          preferCSSPageSize: true
+          displayHeaderFooter: string
+          headerTemplate: string
+          footerTemplate: string
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagepdfoptions'
+      properties:
+        format:
+          type: string
+          enum:
+            - Letter
+            - Legal
+            - Tabloid
+            - Ledger
+            - A0
+            - A1
+            - A2
+            - A3
+            - A4
+            - A5
+            - A6
+          example: A4
+          description: 'Paper format. If set, takes priority over `width` or `height` options. Defaults to ''Letter''.'
+        scale:
+          type: number
+          description: Scale of the webpage rendering. Defaults to `1`. Scale amount must be between 0.1 and 2.
+          minimum: 0.1
+          maximum: 2
+          multipleOf: 0.1
+          example: 1
+        printBackground:
+          description: Print background graphics. Defaults to `false`.
+          type: boolean
+        landscape:
+          type: boolean
+          description: Paper orientation. Defaults to `false`.
+        pageRanges:
+          type: string
+          description: 'Paper ranges to print, e.g., ''1-5, 8, 11-13''. Defaults to the empty string, which means print all pages.'
+        width:
+          oneOf:
+            - type: string
+            - type: number
+          description: 'Paper width, accepts values labeled with units.'
+        height:
+          description: 'Paper height, accepts values labeled with units.'
+          oneOf:
+            - type: string
+            - type: number
+        margin:
+          type: object
+          description: 'Paper margins, defaults to none. '
+          properties:
+            top:
+              oneOf:
+                - type: string
+                - type: number
+              description: 'Top margin, accepts values labeled with units.'
+            right:
+              oneOf:
+                - type: string
+                - type: number
+              description: 'Right margin, accepts values labeled with units.'
+            bottom:
+              oneOf:
+                - type: string
+                - type: number
+              description: 'Bottom margin, accepts values labeled with units.'
+            left:
+              oneOf:
+                - type: string
+                - type: number
+              description: 'Left margin, accepts values labeled with units.'
+        preferCSSPageSize:
+          type: boolean
+          description: 'Give any CSS `@page` size declared in the page priority over what is declared in `width` and `height` or `format` options. Defaults to `false`, which will scale the content to fit the paper size.'
+        displayHeaderFooter:
+          description: Display header and footer. Defaults to `false`.
+          type: boolean
+        headerTemplate:
+          type: string
+          description: |-
+            HTML template for the print header. Should be valid HTML markup with following classes used to inject printing values into them:
+            - `date` formatted print date
+            - `title` document title
+            - `url` document location
+            - `pageNumber` current page number
+            - `totalPages` total pages in the document
+        footerTemplate:
+          type: string
+          description: HTML template for the print footer. Should use the same format as the `headerTemplate`.
+    AddScriptTagOptions:
+      title: AddScriptTagOptions
+      type: object
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#frameaddscripttagoptions'
+      x-examples:
+        example:
+          url: 'https://example.com/script.js'
+          path: string
+          content: string
+      properties:
+        url:
+          type: string
+          description: URL of a script to be added.
+          format: uri
+          example: 'https://example.com/script.js'
+        path:
+          type: string
+          description: 'Path to the JavaScript file to be injected into frame. If `path` is a relative path, then it is resolved relative to [current working directory](https://nodejs.org/api/process.html#process_process_cwd).'
+        content:
+          type: string
+          description: Raw JavaScript content to be injected into frame.
+        type:
+          type: string
+          description: 'Script type. Use ''module'' in order to load a Javascript ES6 module. See [script](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) for more details.'
+    AddStyleTagOptions:
+      title: AddStyleTagOptions
+      type: object
+      properties:
+        url:
+          type: string
+          description: URL of the `<link>` tag.
+        path:
+          type: string
+          description: 'Path to the CSS file to be injected into frame. If `path` is a relative path, then it is resolved relative to [current working directory](https://nodejs.org/api/process.html#process_process_cwd).'
+        content:
+          type: string
+          description: Raw CSS content to be injected into frame.
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#frameaddstyletagoptions'
+    SetCookieOptions:
+      title: SetCookieOptions
+      description: |-
+        See also:
+        - https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagesetcookiecookies
+        - https://chromedevtools.github.io/devtools-protocol/tot/Network/#method-setCookie
+        - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
+      type: object
+      x-examples: {}
+      properties:
+        name:
+          type: string
+          description: The cookie name.
+        value:
+          type: string
+          description: The cookie value.
+        url:
+          type: string
+          description: The request-URI to associate with the setting of the cookie. This value can affect the default domain and path values of the created cookie.
+        domain:
+          type: string
+          description: Host to which the cookie will be sent.
+        path:
+          type: string
+          description: 'A path that must exist in the requested URL, or the browser won''t send the Cookie header.'
+        expires:
+          type: number
+          description: 'Cookie expiration date, session cookie if not set.'
+        httpOnly:
+          type: boolean
+          description: 'Forbids JavaScript from accessing the cookie, for example, through the `Document.cookie` property.'
+        secure:
+          type: boolean
+          description: 'Cookie is only sent to the server when a request is made with the `https:` scheme.'
+        sameSite:
+          type: string
+          enum:
+            - Strict
+            - Lax
+          description: Controls whether a cookie is sent with cross-origin requests.
+      required:
+        - name
+        - value
+    Options:
+      title: Options
+      type: object
+      properties:
+        source:
+          $ref: '#/components/schemas/SourceOptions'
+        pdf:
+          $ref: '#/components/schemas/PdfOptions'
+        styles:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddStyleTagOptions'
+        scripts:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddScriptTagOptions'
+        cookies:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetCookieOptions'
+        wait:
+          $ref: '#/components/schemas/WaitOptions'
+      required:
+        - source
+    WaitOptions:
+      title: WaitOptions
+      oneOf:
+        - $ref: '#/components/schemas/WaitForFunctionOptions'
+        - $ref: '#/components/schemas/WaitForSelectorOptions'
+        - $ref: '#/components/schemas/WaitForNavigationOptions'
+        - $ref: '#/components/schemas/WaitForTimeoutOptions'
+      discriminator:
+        propertyName: for
+        mapping:
+          function: '#/components/schemas/WaitForFunctionOptions'
+          selector: '#/components/schemas/WaitForSelectorOptions'
+          navigation: '#/components/schemas/WaitForNavigationOptions'
+          timeout: '#/components/schemas/WaitForTimeoutOptions'
+    WaitForFunctionOptions:
+      title: WaitForFunctionOptions
+      type: object
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitforfunctionpagefunction-options-args'
+      properties:
+        for:
+          type: string
+          description: Wait options discriminator.
+          enum:
+            - function
+        pageFunction:
+          type: string
+          description: Function to be evaluated in browser context
+        polling:
+          oneOf:
+            - type: string
+              enum:
+                - raf
+                - mutation
+            - type: number
+          description: |-
+            An interval at which the `pageFunction` is executed, defaults to `raf`. If `polling` is a number, then it is treated as an interval in milliseconds at which the function would be executed. If `polling` is a string, then it can be one of the following values:
+            - `raf` - to constantly execute `pageFunction` in `requestAnimationFrame` callback. This is the tightest polling mode which is suitable to observe styling changes.
+            - `mutation` - to execute `pageFunction` on every DOM mutation.
+        timeout:
+          type: number
+          description: Maximum time to wait for in milliseconds. Defaults to `30000` (30 seconds).
+      required:
+        - for
+        - pageFunction
+    WaitForSelectorOptions:
+      title: WaitForSelectorOptions
+      type: object
+      properties:
+        for:
+          type: string
+          description: Wait options discriminator.
+          enum:
+            - selector
+        selector:
+          type: string
+          description: A selector of an element to wait for
+        visible:
+          type: boolean
+          description: 'Wait for element to be present in DOM and to be visible, i.e. to not have `display: none` or `visibility: hidden` CSS properties. Defaults to `false`.'
+        hidden:
+          type: boolean
+          description: 'Wait for element to not be found in the DOM or to be hidden, i.e. have `display: none` or `visibility: hidden` CSS properties. Defaults to `false`.'
+        timeout:
+          type: number
+          description: Maximum time to wait for in milliseconds. Defaults to `30000` (30 seconds).
+      required:
+        - for
+        - selector
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitforselectorselector-options'
+    WaitForNavigationOptions:
+      title: WaitForNavigationOptions
+      type: object
+      properties:
+        for:
+          type: string
+          description: Wait options discriminator.
+          enum:
+            - navigation
+        waitUntil:
+          type: string
+          description: |-
+            When to consider navigation succeeded, defaults to `load`. Given an array of event strings, navigation is considered to be successful after all events have been fired. Events can be either:
+            - `load` - consider navigation to be finished when the `load` event is fired.
+            - `domcontentloaded` - consider navigation to be finished when the `DOMContentLoaded` event is fired.
+            - `networkidle0` - consider navigation to be finished when there are no more than 0 network connections for at least `500` ms.
+            - `networkidle2` - consider navigation to be finished when there are no more than 2 network connections for at least `500` ms.
+          enum:
+            - load
+            - domcontentloaded
+            - networkidle0
+            - networkidle2
+        timeout:
+          type: number
+          description: Maximum time to wait for in milliseconds. Defaults to `30000` (30 seconds).
+      required:
+        - for
+        - waitUntil
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitfornavigationoptions'
+    WaitForTimeoutOptions:
+      title: WaitForTimeoutOptions
+      type: object
+      properties:
+        for:
+          type: string
+          description: Wait options discriminator.
+          enum:
+            - timeout
+        milliseconds:
+          type: number
+          description: The number of milliseconds to wait for.
+      required:
+        - for
+        - milliseconds
+      description: 'See also: https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitfortimeoutmilliseconds'
+    SourceOptions:
+      title: SourceOptions
+      oneOf:
+        - properties:
+            html:
+              type: string
+              example: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body><h1>Hello World!</h1></body></html>'
+              description: The HTML to be converted to PDF
+          required:
+            - html
+        - properties:
+            url:
+              type: string
+              format: uri
+              example: 'https://example.com'
+              description: The URL to be converted to PDF
+          required:
+            - url
+      type: object
+  securitySchemes:
+    api-key:
+      name: x-api-key
+      type: apiKey
+      in: header
+  responses: {}
+security:
+  - api-key: []

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./_head.html', {
+    "path": ".",
+    "title": "yakpdf"
+    })
+</head>
+
+<body>
+    @@include('./_navigation.html', {
+    "path": ".",
+    "classes": "navbar-light navbar-theme-secondary"
+    })
+    <main>
+        <!-- Hero -->
+        <section class="section section-header text-dark pb-md-7 bg-soft">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center">
+                        <h1 class="display-2 font-weight-bolder mb-3">
+                            Examples
+                        </h1>
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 text-center">
+                                <h2 class="display-3 mb-4">Invoice</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INVOICE -->
+            <div class="container ">
+
+                <div class="row row-grid align-items-center">
+                    <div class="col-12 px-lg-9">
+
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab-invoice" role="tablist">
+                                    <a class="nav-link active " id="nav-pdfInvoice-tab" data-toggle="tab"
+                                        href="#nav-pdfInvoice" role="tab" aria-controls="nav-pdfInvoice"
+                                        aria-selected="true">PDF</a>
+                                    <a class="nav-link" id="nav-codeInvoiceSnippet-tab" data-toggle="tab"
+                                        href="#nav-codeInvoiceSnippet" role="tab" aria-controls="nav-codeInvoiceSnippet"
+                                        aria-selected="false">Snippet</a>
+                                </div>
+
+                            </nav>
+                            <div class="tab-pane show active" id="nav-pdfInvoice" role="tabpanel"
+                                aria-labelledby="nav-pdfInvoice-tab">
+
+
+                                <iframe title="Invoce pdf" src="./assets/pdf/invoice.pdf#zoom=70" type="application/pdf"
+                                    width="100%" height="500px" class="d-none d-md-block">
+                                </iframe>
+
+
+                                <iframe title="Invoice pdf"
+                                    src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/invoice.pdf"
+                                    width="100%" height="500px" class="d-md-none">
+                                </iframe>
+
+
+                            </div>
+
+                            <div class="tab-pane " id="nav-codeInvoiceSnippet" role="tabpanel"
+                                aria-labelledby="nav-codeInvoiceSnippet-tab">
+                                <i id="button_codeInvoiceSnippet" class="fa fa-copy fa-lg d-none d-md-block"
+                                    title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                    aria-hidden="true" onclick="copyTextFromElement('terminalcodeInvoiceSnippet')"></i>
+
+                                <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                    title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                    data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeInvoiceSnippet">  curl --request POST \
+    --url https://yakpdf.p.rapidapi.com/pdf \
+    --header 'content-type: application/json' \
+    --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+    --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+    --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/invoice/invoice"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+  }' > testInvoice.pdf
+                                
+
+
+
+
+
+
+
+
+
+
+    
+</code></pre>
+
+                            </div>
+                            <div class="pt-4 text-center">
+
+                                <a target="_blank" rel="noopener" rel="canonical"
+                                    href="https://github.com/yakpdf/examples/blob/main/invoice/invoice.html"
+                                    class="btn btn-outline-dark animate-up-2 "><span class="fab fa-github fa-xl"></span>
+                                    See the code</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- normal -->
+            <figure style="transform:rotate(180deg)"
+                class="position-absolute bottom-0 left-0 w-100 d-md-block mb-n3 d-none">
+                <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4"
+                    style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                    <path
+                        d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z">
+                    </path>
+                </svg>
+            </figure>
+
+            <!-- mobile  -->
+            <div class="position-absolute top-80 left-0 w-100 mb-n3 d-md-none d-md-none">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <!-- generated https://web.archive.org/web/20180810082435/https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections 
+                    M-1.09,110.03 C149.99,150.00 281.70,54.77 502.55,114.95 L500.00,0.00 L0.00,0.00 Z-->
+                    <path d="M-1.09,110.03 C149.99,150.00 281.70,54.77 502.55,114.95 L500.00,0.00 L0.00,0.00 Z"
+                        style="stroke: none;fill: #eff1f5;"></path>
+                </svg>
+            </div>
+        </section>
+        <section class="section section-lg py-5 pt-7 mb-3">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center">
+
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 text-center">
+                                <h2 class="display-3 mb-4">Report</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REPORT -->
+            <div class="container ">
+                <div class="row row-grid align-items-center">
+                    <div class="col-12 px-lg-9 mb-5">
+
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab-report" role="tablist">
+                                    <a class="nav-link active " id="nav-pdfReport-tab" data-toggle="tab"
+                                        href="#nav-pdfReport" role="tab" aria-controls="nav-pdfReport"
+                                        aria-selected="true">PDF</a>
+                                    <a class="nav-link" id="nav-codeReportSnippet-tab" data-toggle="tab"
+                                        href="#nav-codeReportSnippet" role="tab" aria-controls="nav-codeReportSnippet"
+                                        aria-selected="false">Snippet</a>
+                                </div>
+
+                            </nav>
+                            <div class="tab-pane show active" id="nav-pdfReport" role="tabpanel"
+                                aria-labelledby="nav-pdfReport-tab">
+
+
+
+                                <iframe title="Report pdf" src="./assets/pdf/report.pdf#zoom=70" type="application/pdf"
+                                    width="100%" height="500px" class="d-none d-md-block">
+                                </iframe>
+
+
+                                <iframe title="Report pdf"
+                                    src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/report.pdf"
+                                    width="100%" height="500px" class="d-md-none">
+                                </iframe>
+
+
+                            </div>
+
+                            <div class="tab-pane " id="nav-codeReportSnippet" role="tabpanel"
+                                aria-labelledby="nav-codeReportSnippet-tab">
+                                <i id="button_codeReportSnippet" class="fa fa-copy fa-lg d-none d-md-block"
+                                    title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                    aria-hidden="true" onclick="copyTextFromElement('terminalcodeReportSnippet')"></i>
+
+                                <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                    title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                    data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeReportSnippet">  curl --request POST \
+    --url https://yakpdf.p.rapidapi.com/pdf \
+    --header 'content-type: application/json' \
+    --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+    --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+    --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/report/report"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+  }' > testReport.pdf
+                                            
+            
+            
+                
+            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            </code></pre>
+
+                            </div>
+
+                            <div class="pt-4 text-center">
+                                <a target="_blank" rel="noopener" rel="canonical"
+                                    href="https://github.com/yakpdf/examples/blob/main/report/report.html"
+                                    class="btn btn-outline-dark animate-up-2 "><span class="fab fa-github fa-xl"></span>
+                                    See the code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <section class="section section-lg bg-soft py-5 pt-7 ">
+
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4"
+                    style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                    <path
+                        d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z">
+                    </path>
+                </svg>
+            </figure>
+
+
+
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center">
+
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 text-center">
+                                <h2 class="display-3 mb-4">Resume</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- RESUME -->
+            <div class="container d-none d-md-block">
+
+                <div id="carouselExampleIndicators" data-interval="false" class="carousel slide pb-6"
+                    data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row row-grid align-items-center">
+                                <div class="col-12 px-lg-9 ">
+
+                                    <div class="tab-content" id="nav-tabContent">
+
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab-resume" role="tablist">
+                                                <a class="nav-link active " id="nav-pdfResume-tab" data-toggle="tab"
+                                                    href="#nav-pdfResume" role="tab" aria-controls="nav-pdfResume"
+                                                    aria-selected="true">PDF</a>
+
+                                                <a class="nav-link" id="nav-codeResumeSnippet-tab" data-toggle="tab"
+                                                    href="#nav-codeResumeSnippet" role="tab"
+                                                    aria-controls="nav-codeResumeSnippet"
+                                                    aria-selected="false">Snippet</a>
+                                            </div>
+
+                                        </nav>
+                                        <div class="tab-pane show active" id="nav-pdfResume" role="tabpanel"
+                                            aria-labelledby="nav-pdfResume-tab">
+
+
+
+                                            <iframe title="Resume v1 pdf" src="./assets/pdf/resume_v_1.pdf#zoom=70"
+                                                type="application/pdf" width="100%" height="500px"
+                                                class="d-none d-md-block">
+                                            </iframe>
+
+
+                                            <iframe title="Resume v1 pdf"
+                                                src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/resume_v_1.pdf"
+                                                width="100%" height="500px" class="d-md-none">
+                                            </iframe>
+
+                                        </div>
+
+                                        <div class="tab-pane " id="nav-codeResumeSnippet" role="tabpanel"
+                                            aria-labelledby="nav-codeResumeSnippet-tab">
+                                            <i id="button_codeResumeSnippet" class="fa fa-copy fa-lg d-none d-md-block"
+                                                title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                                aria-hidden="true"
+                                                onclick="copyTextFromElement('terminalcodeResumeSnippet')"></i>
+
+                                            <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                                title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                                data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                            <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeResumeSnippet">  curl --request POST \
+    --url https://yakpdf.p.rapidapi.com/pdf \
+    --header 'content-type: application/json' \
+    --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+    --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+    --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/resume/resume"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+  }' > testResume.pdf
+                                            
+            
+            
+              
+            
+            
+            
+            
+            
+            
+            
+                
+            </code></pre>
+
+                                        </div>
+                                        <div class="pt-4 text-center">
+                                            <a target="_blank" rel="noopener" rel="canonical"
+                                                href="https://github.com/yakpdf/examples/blob/main/resume/resume.html"
+                                                class="btn btn-outline-dark animate-up-2 "><span
+                                                    class="fab fa-github fa-xl"></span> See the code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row row-grid align-items-center">
+                                <div class="col-12 px-lg-9 ">
+
+                                    <div class="tab-content" id="nav-tabContent">
+
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab-resume_2" role="tablist">
+                                                <a class="nav-link active " id="nav-pdfResume_2-tab" data-toggle="tab"
+                                                    href="#nav-pdfResume_2" role="tab" aria-controls="nav-pdfResume_2"
+                                                    aria-selected="true">PDF</a>
+                                                <a class="nav-link" id="nav-codeResume2Snippet-tab" data-toggle="tab"
+                                                    href="#nav-codeResume2Snippet" role="tab"
+                                                    aria-controls="nav-codeResume2Snippet"
+                                                    aria-selected="false">Snippet</a>
+                                            </div>
+
+                                        </nav>
+                                        <div class="tab-pane show active" id="nav-pdfResume_2" role="tabpanel"
+                                            aria-labelledby="nav-pdfResume_2-tab">
+
+
+                                            <iframe title="Resume v2 pdf" src="./assets/pdf/resume_v_2.pdf#zoom=70"
+                                                type="application/pdf" width="100%" height="500px"
+                                                class="d-none d-md-block">
+                                            </iframe>
+
+                                            <iframe title="Resume v2 pdf"
+                                                src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/resume_v_2.pdf"
+                                                width="100%" height="500px" class="d-md-none">
+                                            </iframe>
+
+                                        </div>
+
+                                        <div class="tab-pane " id="nav-codeResume2Snippet" role="tabpanel"
+                                            aria-labelledby="nav-codeResume2Snippet-tab">
+                                            <i id="button_codeResume2Snippet" class="fa fa-copy fa-lg d-none d-md-block"
+                                                title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                                aria-hidden="true"
+                                                onclick="copyTextFromElement('terminalcodeResume2Snippet')"></i>
+
+                                            <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                                title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                                data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                            <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeResume2Snippet">  curl --request POST \
+    --url https://yakpdf.p.rapidapi.com/pdf \
+    --header 'content-type: application/json' \
+    --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+    --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+    --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/resume-master/resume-master"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+  }' > testResume2.pdf
+                                
+            
+            
+              
+            
+            
+            
+            
+            
+            
+            
+                
+            </code></pre>
+
+                                        </div>
+                                        <div class="pt-4 text-center">
+                                            <a target="_blank" rel="noopener" rel="canonical"
+                                                href="https://github.com/yakpdf/examples/blob/main/resume-master/resume-master.html"
+                                                class="btn btn-outline-dark animate-up-2 "><span
+                                                    class="fab fa-github fa-xl"></span> See the code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span style="color:gray;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span style="color:gray;" class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+            </div>
+            <!-- RESUME MOBILE-->
+
+            <div class="container d-md-none">
+
+
+                <div class="row row-grid align-items-center">
+                    <div class="col-12 px-lg-9 MB-5">
+
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab-resume_2_mobile" role="tablist">
+                                    <a class="nav-link active " id="nav-pdfResume_2_mobile-tab" data-toggle="tab"
+                                        href="#nav-pdfResume_2_mobile" role="tab" aria-controls="nav-pdfResume_2_mobile"
+                                        aria-selected="true">PDF</a>
+                                    <a class="nav-link" id="nav-codeResume2Snippet_mobile-tab" data-toggle="tab"
+                                        href="#nav-codeResume2Snippet_mobile" role="tab"
+                                        aria-controls="nav-codeResume2Snippet_mobile" aria-selected="false">Snippet</a>
+                                </div>
+
+                            </nav>
+                            <div class="tab-pane show active" id="nav-pdfResume_2_mobile" role="tabpanel"
+                                aria-labelledby="nav-pdfResume_2_mobile-tab">
+
+
+                                <iframe title="Resume v2 pdf"
+                                    src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/resume_v_2.pdf"
+                                    width="100%" height="500px" class="d-md-none">
+                                </iframe>
+
+                                <iframe title="Resume v2 pdf" src="./assets/pdf/resume_v_2.pdf#zoom=70" width="100%"
+                                    type="application/pdf" height="500px" class="d-none d-md-block">
+                                </iframe>
+
+
+                            </div>
+
+                            <div class="tab-pane " id="nav-codeResume2Snippet_mobile" role="tabpanel"
+                                aria-labelledby="nav-codeResume2Snippet_mobile-tab">
+                                <i id="button_codeResume2Snippet_mobile" class="fa fa-copy fa-lg d-none d-md-block"
+                                    title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                    aria-hidden="true"
+                                    onclick="copyTextFromElement('terminalcodeResume2Snippet_mobile')"></i>
+
+                                <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                    title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                    data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeResume2Snippet_mobile">  curl --request POST \
+    --url https://yakpdf.p.rapidapi.com/pdf \
+    --header 'content-type: application/json' \
+    --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+    --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+    --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/resume-master/resume-master"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+  }' > testResume2.pdf
+                                
+            
+            
+              
+            
+            
+            
+            
+            
+            
+            
+                
+            </code></pre>
+
+                            </div>
+                            <div class="pt-4 text-center">
+                                <a target="_blank" rel="noopener" rel="canonical"
+                                    href="https://github.com/yakpdf/examples/blob/main/resume-master/resume-master.html"
+                                    class="btn btn-outline-dark animate-up-2 "><span class="fab fa-github fa-xl"></span>
+                                    See the code</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- normal -->
+            <figure style="transform:rotate(180deg)"
+                class="position-absolute bottom-0 left-0 w-100 d-md-block mb-n3 d-none">
+                <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4"
+                    style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                    <path
+                        d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z">
+                    </path>
+                </svg>
+            </figure>
+
+            <!-- mobile  -->
+            <div class="position-absolute top-80 left-0 w-100 mb-n3 d-md-none d-md-none">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M-1.09,110.03 C149.99,150.00 281.70,54.77 502.55,114.95 L500.00,0.00 L0.00,0.00 Z"
+                        style="stroke: none;fill: #eff1f5;"></path>
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- LETTER -->
+        <section class="section section-lg py-3 pt-6">
+            <div class="container">
+
+                <div class="row row-grid align-items-center mb-3 lg-7 mt-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 text-center">
+                                <div class="row justify-content-center mb-4">
+                                    <div class="col-12 text-center">
+                                        <h2 class="display-3 mb-4">Business Card</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+
+                        <div class="row row-grid align-items-center">
+                            <div class="col-12 px-lg-9 mb-6">
+
+                                <div class="tab-content" id="nav-tabContent">
+
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab-card" role="tablist">
+                                            <a class="nav-link active " id="nav-pdfCard-tab" data-toggle="tab"
+                                                href="#nav-pdfCard" role="tab" aria-controls="nav-pdfCard"
+                                                aria-selected="true">PDF</a>
+                                            <a class="nav-link" id="nav-codeCardSnippet-tab" data-toggle="tab"
+                                                href="#nav-codeCardSnippet" role="tab"
+                                                aria-controls="nav-codeCardSnippet" aria-selected="false">Snippet</a>
+                                        </div>
+
+                                    </nav>
+                                    <div class="tab-pane show active" id="nav-pdfCard" role="tabpanel"
+                                        aria-labelledby="nav-pdfCard-tab">
+
+
+                                        <iframe title="Card pdf" src="./assets/pdf/card.pdf" width="100%"
+                                            type="application/pdf" height="500px" class="d-none d-md-block">
+                                        </iframe>
+
+                                        <iframe title="Card pdf"
+                                            src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/card.pdf"
+                                            width="100%" height="500px" class="d-md-none">
+                                        </iframe>
+
+                                    </div>
+                                    <div class="tab-pane " id="nav-codeCardSnippet" role="tabpanel"
+                                        aria-labelledby="nav-codeCardSnippet-tab">
+                                        <i id="button_codeCardSnippet" class="fa fa-copy fa-lg d-none d-md-block"
+                                            title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                            aria-hidden="true"
+                                            onclick="copyTextFromElement('terminalcodeCardSnippet')"></i>
+
+                                        <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                            title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                            data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                        <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeCardSnippet">  curl --request POST \
+    --url https://yakpdf.p.rapidapi.com/pdf \
+    --header 'content-type: application/json' \
+    --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+    --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+    --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/business-card/business-card"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+  }' > testBusinessCard.pdf
+                                        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        </code></pre>
+
+                                    </div>
+
+                                    <div class="pt-4 text-center">
+                                        <a target="_blank" rel="noopener" rel="canonical"
+                                            href="https://github.com/yakpdf/examples/blob/main/business-card/business-card.html"
+                                            class="btn btn-outline-dark animate-up-2 "><span
+                                                class="fab fa-github fa-xl"></span>
+                                            See the code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="section section-lg bg-soft py-5 pt-7" id="">
+
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4"
+                    style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                    <path
+                        d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z">
+                    </path>
+                </svg>
+            </figure>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center">
+
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 text-center">
+                                <h2 class="display-3 mb-4">Letter</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="row row-grid align-items-center">
+                    <div class="col-12 px-lg-9 mb-4">
+
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab-letter" role="tablist">
+                                    <a class="nav-link active " id="nav-pdfLetter-tab" data-toggle="tab"
+                                        href="#nav-pdfLetter" role="tab" aria-controls="nav-pdfLetter"
+                                        aria-selected="true">PDF</a>
+                                    <a class="nav-link" id="nav-codeLetterSnippet-tab" data-toggle="tab"
+                                        href="#nav-codeLetterSnippet" role="tab" aria-controls="nav-codeLetterSnippet"
+                                        aria-selected="false">Snippet</a>
+                                </div>
+
+                            </nav>
+                            <div class="tab-pane show active" id="nav-pdfLetter" role="tabpanel"
+                                aria-labelledby="nav-pdfLetter-tab">
+                                <!-- 
+
+                                <iframe title="Invoce pdf" src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.github.io/examples/report/report.pdf" width="100%"
+                                    height="500px" class="d-none d-md-block">
+                                </iframe>
+
+                                <iframe title="Invoice pdf"
+                                    src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.github.io/examples/report/report.pdf"
+                                    width="100%" height="500px" class="d-md-none">
+                                </iframe>
+                                -->
+
+                                <iframe title="Letter pdf" src="./assets/pdf/letter.pdf#zoom=70" width="100%"
+                                    type="application/pdf" height="500px" class="d-none d-md-block">
+                                </iframe>
+
+
+
+
+                                <iframe title="Letter pdf"
+                                    src="https://docs.google.com/gview?embedded=true&url=https://yakpdf.com/assets/pdf/letter.pdf"
+                                    width="100%" height="500px" class="d-md-none">
+                                </iframe>
+
+                            </div>
+
+                            <div class="tab-pane " id="nav-codeLetterSnippet" role="tabpanel"
+                                aria-labelledby="nav-codeLetterSnippet-tab">
+                                <i id="button_codeLetterSnippet" class="fa fa-copy fa-lg d-none d-md-block"
+                                    title="Copy to clipboard" data-toggle="tooltip" data-placement="bottom"
+                                    aria-hidden="true" onclick="copyTextFromElement('terminalcodeLetterSnippet')"></i>
+
+                                <i id="button_info" class="fa fa-info fa-lg d-none d-md-block"
+                                    title="Are you getting an error? Make sure there are no white spaces on either side of the api-key...or contact us!"
+                                    data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+
+                                <pre><code data-ln-start-from="1"  class="bash"  id="terminalcodeLetterSnippet">    curl --request POST \
+        --url https://yakpdf.p.rapidapi.com/pdf \
+        --header 'content-type: application/json' \
+        --header 'x-rapidapi-host: yakpdf.p.rapidapi.com' \
+        --header 'x-rapidapi-key:{{YOUR_APY_KEY}}' \
+        --data '{
+        "pdf": {
+            "preferCSSPageSize": true,
+            "printBackground": true
+        },
+        "source": {
+            "url": "https://yakpdf.github.io/examples/letter/letter"
+        },
+        "wait": {
+            "for": "navigation", "timeout": 1000, "waitUntil": "load"
+        }
+    }' > testLetter.pdf
+
+
+
+
+
+
+
+
+
+
+
+    
+</code></pre>
+
+                            </div>
+                            <div class="pt-4 text-center">
+                                <a target="_blank" rel="noopener" rel="canonical"
+                                    href="https://github.com/yakpdf/examples/blob/main/letter/letter.html"
+                                    class="btn btn-outline-dark animate-up-2 "><span class="fab fa-github fa-xl"></span>
+                                    See the code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- normal -->
+            <figure style="transform:rotate(180deg)"
+                class="position-absolute bottom-0 left-0 w-100 d-md-block mb-n3 d-none">
+                <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4"
+                    style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                    <path
+                        d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z">
+                    </path>
+                </svg>
+            </figure>
+
+            <!-- mobile  -->
+            <div class="position-absolute top-80 left-0 w-100 mb-n3 d-md-none d-md-none">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+
+                    <path d="M-1.09,110.03 C149.99,150.00 281.70,54.77 502.55,114.95 L500.00,0.00 L0.00,0.00 Z"
+                        style="stroke: none;fill: #eff1f5;"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="section section-lg py-3 pt-7">
+            <div class="container">
+                <div class="row row-grid align-items-center mb-3 lg-7">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 text-center">
+                                <div class="row justify-content-center mb-5">
+                                    <div class="col-12 text-center">
+                                        <h3 class=" mb-3">Didn't find what you were looking for?</h3>
+
+                                        <h4 class=" mb-4">Our team is here to help you build the perfect PDF.</h4>
+                                        <a href="mailto:info@yakpdf.com?subject=Info custom template" class="btn btn-outline-dark animate-up-2">Let's
+                                            talk!</a>
+
+
+                                    </div>
+                                    <div class="col-lg-6 align-items-center">
+                                        <img src="./assets/img/team.svg" class="w-100"
+                                            alt="A person sitting on a bench using the computer">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <div id="notification-box">
+    </main>
+
+    @@include('./_footer.html', {
+    "path": "."
+    })
+
+    @@include('./_scripts.html', {
+    "path": "."
+    })
+</body>
+
+</html>
