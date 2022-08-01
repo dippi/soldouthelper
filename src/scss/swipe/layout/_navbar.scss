@@ -148,14 +148,14 @@
 }
 
 .navbar-brand {
-    font-size: $font-size-lg;
+    font-size: $font-size-xxl;
     font-weight: $font-weight-bold;
     // text-transform: uppercase;
 
     img {
-        height: 44px;
+        height: 100px;
         margin-top: -10px;
-        max-width: none;
+        max-width: auto;
     }
 }
 
